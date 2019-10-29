@@ -43,6 +43,15 @@ public class Behaviour_Player : MonoBehaviour {
 		
     }
 	
+	void rotateTo(vector2<floar, float> movement) {
+		public float speed = 5f;
+		float angle = Mathf.Atan2(movement.y, movement.x) * Mathf.rad2Deg;
+		Quaternion rotation = Quarternion.AngleAxis(angle, Vector3.forward);
+		trasnform.rotation = Quaternion.Slerp(transform.rotaion, rotation, speed*Time.fixedDeltaTime);
+		
+
+	}
+
 	void moveAngleTo(Vector2 movement) {
 		float currentRot = -(rb2d.rotation % 360);
 		Debug.Log("currenRot " + currentRot);

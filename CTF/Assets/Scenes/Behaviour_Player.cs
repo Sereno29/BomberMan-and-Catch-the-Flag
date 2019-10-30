@@ -32,7 +32,6 @@ public class Behaviour_Player : MonoBehaviour {
         //Use the two store floats to create a new Vector2 variable movement.
         Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
 		 //moveAngleTo(movement);
-		
 
         //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
 		

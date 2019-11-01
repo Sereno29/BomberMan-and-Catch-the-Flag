@@ -4,15 +4,11 @@ using UnityEngine;
 using System;
 public class Behaviour_Player : MonoBehaviour {
 
-    public float speed;                //Floating point variable to store the player's movement speed.
+    public float acceleration;                //Floating point variable to store the player's movement speed.
 	public float maxSpeed;
 	
     private Rigidbody2D rb2d;        //Store a reference to the Rigidbody2D component required to use 2D Physics.
 	
-	void Awake() {
-		speed = 150;
-		maxSpeed = 8;
-	}
     // Use this for initialization
     void Start()
     {
@@ -35,22 +31,24 @@ public class Behaviour_Player : MonoBehaviour {
 
         //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
 		
-		if( (rb2d.velocity.x > maxSpeed && movement.x > 0) || (rb2d.velocity.x < -maxSpeed && movement.x < 0) ) {
+		if( (rb2d.velocity.x >= maxSpeed && movement.x > 0) || (rb2d.velocity.x < -maxSpeed && movement.x < 0) ) {
 			movement.x = 0.0f;
 		}
-		if( (rb2d.velocity.y > maxSpeed && movement.y > 0) || (rb2d.velocity.y < -maxSpeed && movement.y < 0) ) {
+		if( (rb2d.velocity.y >= maxSpeed && movement.y > 0) || (rb2d.velocity.y < -maxSpeed && movement.y < 0) ) {
 			movement.y = 0.0f;
 		}
 		
-		rb2d.AddForce(movement * speed);
+		rb2d.AddForce(movement * acceleration);
 
 	
 		if((moveHorizontal != 0) || (moveVertical!= 0))
 			rotateTo(moveHorizontal, moveVertical);	
     }
+	
 	private float angle;
 	Quaternion rotation;
 	private Vector3 direction;
+	
 	void rotateTo(float x, float y) {
 		Vector3 movement = new Vector3();
 		movement.Set(x, y, 0);

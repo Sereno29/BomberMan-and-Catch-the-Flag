@@ -38,7 +38,7 @@ public class Behaviour_Player : MonoBehaviour {
 			movement.y = 0.0f;
 		}
 		
-		rb2d.AddForce(movement * acceleration);
+		rb2d.velocity = movement * acceleration;
 
 	
 		if((moveHorizontal != 0) || (moveVertical!= 0))

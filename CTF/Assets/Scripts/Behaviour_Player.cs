@@ -8,12 +8,14 @@ public class Behaviour_Player : MonoBehaviour {
 	public float maxSpeed;
 	
     private Rigidbody2D rb2d;        //Store a reference to the Rigidbody2D component required to use 2D Physics.
-	
+	private Animator anim;
+
     // Use this for initialization
     void Start()
     {
     //Get and store a reference to the Rigidbody2D component so that we can access it.
        rb2d = GetComponent<Rigidbody2D> ();
+	   anim = GetComponent<Animator> ();
     }
 
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
@@ -39,11 +41,26 @@ public class Behaviour_Player : MonoBehaviour {
 		}
 		
 		rb2d.velocity = movement * acceleration;
-
 	
-		if((moveHorizontal != 0) || (moveVertical!= 0))
+		if((moveHorizontal != 0) || (moveVertical!= 0)) {
 			rotateTo(moveHorizontal, moveVertical);	
+
+		}
+
+		anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x)+Mathf.Abs(rb2d.velocity.y));
+		anim.SetBool("isFrozen", false);
     }
+
+    void OnTriggerEnter2D(Collider2D collider) {
+        if(collider.gameObject.tag == "Flag") {
+            anim.SetBool("isFlagged", true);
+        }
+    }
+	void Upadate() {
+		// anim.SetFloat("Speed", 1);
+		// anim.SetBool("isFlagged", false);
+		// anim.SetBool("isFrozen", false);
+	}
 	
 	private float angle;
 	Quaternion rotation;

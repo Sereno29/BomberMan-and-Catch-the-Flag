@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: 14976a4d2fabeb33f827e26cef3d7b21
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -7529383491139335499
+    second: Doppa_04_com_flag_blue_5
+  - first:
+      213: 3555471596310985520
+    second: Doppa_04_com_flag_blue_6
+  - first:
+      213: 22981185117772149
+    second: Doppa_04_com_flag_blue_7
+  - first:
+      213: 5492952084045633491
+    second: Doppa_04_com_flag_blue_8
+  - first:
+      213: -8887380298462752203
+    second: Doppa_04_com_flag_blue_9
+  - first:
+      213: -4055816751478814131
+    second: Doppa_04_com_flag_blue_10
+  - first:
+      213: 9161586539689982660
+    second: Doppa_04_com_flag_blue_11
+  - first:
+      213: 7529294253740270294
+    second: Doppa_04_com_flag_blue_0
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +64,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +94,201 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Doppa_04_com_flag_blue_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 19
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47ba985fac42c8be0be9265cfdc310ad
+      internalID: -7529383491139335499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doppa_04_com_flag_blue_6
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 0
+        width: 295
+        height: 461
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0eefb62631c2b48e4b8bd093e8c993ae
+      internalID: 3555471596310985520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doppa_04_com_flag_blue_7
+      rect:
+        serializedVersion: 2
+        x: 698
+        y: 60
+        width: 287
+        height: 391
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d3e897d38662066faabe923edd85641
+      internalID: 22981185117772149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doppa_04_com_flag_blue_8
+      rect:
+        serializedVersion: 2
+        x: 1139
+        y: 60
+        width: 267
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed253f40dba10b176af9e36b2cffd0e8
+      internalID: 5492952084045633491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doppa_04_com_flag_blue_9
+      rect:
+        serializedVersion: 2
+        x: 1210
+        y: 15
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7926f01e2cb261eb8cc3e3aa54c1f24
+      internalID: -8887380298462752203
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doppa_04_com_flag_blue_10
+      rect:
+        serializedVersion: 2
+        x: 504
+        y: 6
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa0ade3e533fa971996e4aaa3443bb66
+      internalID: -4055816751478814131
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doppa_04_com_flag_blue_11
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 0
+        width: 53
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec02dd8ebb56e182f88d505a009f3aa1
+      internalID: 9161586539689982660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Doppa_04_com_flag_blue_0
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 65
+        width: 295
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac1797b13acf190ce9789db4c5c17be4
+      internalID: 7529294253740270294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

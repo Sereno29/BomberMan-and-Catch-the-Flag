@@ -2,53 +2,76 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using System.Threading;
+
 public class Behaviour_Player : MonoBehaviour {
 
     public float acceleration;                //Floating point variable to store the player's movement speed.
 	public float maxSpeed;
-	
+	public bool quit; 
+    
     private Rigidbody2D rb2d;        //Store a reference to the Rigidbody2D component required to use 2D Physics.
 	private Animator anim;
-
+    Transform t;
+    float moveHorizontal;
+    float moveVertical;
+    Thread thread;
+    Vector2 velocity;
     // Use this for initialization
     void Start()
     {
     //Get and store a reference to the Rigidbody2D component so that we can access it.
        rb2d = GetComponent<Rigidbody2D> ();
 	   anim = GetComponent<Animator> ();
+       velocity = new Vector2(0, 0);
+       quit = false;
+       //thread.Name = String.Format("Thread{0}", 1);
+       thread = new Thread(Run);
+       thread.Start();
     }
 
+    void Run() {
+        
+      Debug.Log("mil");
+    
+       while(true) {
+            //Use the two store floats to create a new Vector2 variable movement.
+            Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
+            //moveAngleTo(movement);
+
+            //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
+            if( (velocity.x >= maxSpeed && movement.x > 0) || (velocity.x < -maxSpeed && movement.x < 0) ) {
+                movement.x = 0.0f;
+            }
+            if( (velocity.y >= maxSpeed && movement.y > 0) || (velocity.y < -maxSpeed && movement.y < 0) ) {
+                movement.y = 0.0f;
+            }
+            velocity = movement * acceleration;
+        }
+    }
+    
     //FixedUpdate is called at a fixed interval and is independent of frame rate. Put physics code here.
     void FixedUpdate()
     {
+        
         //Store the current horizontal input in the float moveHorizontal.
-        float moveHorizontal = Input.GetAxis ("Horizontal");
-
+        moveHorizontal = Input.GetAxis ("P1_Horizontal");
+        Debug.Log("show");
+        
         //Store the current vertical input in the float moveVertical.
-        float moveVertical = Input.GetAxis ("Vertical");
-
-        //Use the two store floats to create a new Vector2 variable movement.
-        Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
-		 //moveAngleTo(movement);
-
-        //Call the AddForce function of our Rigidbody2D rb2d supplying movement multiplied by speed to move our player.
-		
-		if( (rb2d.velocity.x >= maxSpeed && movement.x > 0) || (rb2d.velocity.x < -maxSpeed && movement.x < 0) ) {
-			movement.x = 0.0f;
-		}
-		if( (rb2d.velocity.y >= maxSpeed && movement.y > 0) || (rb2d.velocity.y < -maxSpeed && movement.y < 0) ) {
-			movement.y = 0.0f;
-		}
-		
-		rb2d.velocity = movement * acceleration;
-	
-		if((moveHorizontal != 0) || (moveVertical!= 0)) {
-			rotateTo(moveHorizontal, moveVertical);	
-
-		}
-
-		anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x)+Mathf.Abs(rb2d.velocity.y));
+        moveVertical = Input.GetAxis ("P1_Vertical");
+        rb2d.velocity = velocity;
+		anim.SetFloat("Speed", Mathf.Abs(rb2d.velocity.x) + Mathf.Abs(rb2d.velocity.y));
 		anim.SetBool("isFrozen", false);
+        
+        if((moveHorizontal != 0) || (moveVertical!= 0)) {
+            rotateTo(moveHorizontal, moveVertical);	
+        }
+        
+        if(quit) {
+            OnApplicationQuit();
+        }
+            
     }
 
     void OnTriggerEnter2D(Collider2D collider) {
@@ -56,6 +79,7 @@ public class Behaviour_Player : MonoBehaviour {
             anim.SetBool("isFlagged", true);
         }
     }
+    
 	void Upadate() {
 		// anim.SetFloat("Speed", 1);
 		// anim.SetBool("isFlagged", false);
@@ -75,4 +99,7 @@ public class Behaviour_Player : MonoBehaviour {
 		transform.rotation = Quaternion.Slerp(transform.rotation, rotation, 5 *  Time.fixedDeltaTime);
 	}
 
+    void OnApplicationQuit() {
+        thread.Abort();
+    }
 }

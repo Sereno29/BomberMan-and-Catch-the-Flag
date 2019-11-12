@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading;
 
-public class Base_Verde : MonoBehaviour
+public class Base_Azul : MonoBehaviour
 {
     
     

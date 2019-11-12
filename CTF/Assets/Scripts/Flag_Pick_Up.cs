@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Flag_Pick_Up : MonoBehaviour
 {
-    // Start is called before the first frame update
     void OnTriggerEnter2D(Collider2D collider) {
-        if(collider.gameObject.tag == "Player") {
+        if(collider.gameObject.tag == "Player_1" || collider.gameObject.tag == "Player_2") {
             Destroy (gameObject);
         }
     }

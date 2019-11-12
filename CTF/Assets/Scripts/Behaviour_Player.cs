@@ -25,14 +25,13 @@ public class Behaviour_Player : MonoBehaviour {
 	   anim = GetComponent<Animator> ();
        velocity = new Vector2(0, 0);
        quit = false;
-       //thread.Name = String.Format("Thread{0}", 1);
        thread = new Thread(Run);
        thread.Start();
     }
 
     void Run() {
         
-      Debug.Log("mil");
+      //Debug.Log("mil");
     
        while(true) {
             //Use the two store floats to create a new Vector2 variable movement.
@@ -56,7 +55,7 @@ public class Behaviour_Player : MonoBehaviour {
         
         //Store the current horizontal input in the float moveHorizontal.
         moveHorizontal = Input.GetAxis ("P1_Horizontal");
-        Debug.Log("show");
+        //Debug.Log("show");
         
         //Store the current vertical input in the float moveVertical.
         moveVertical = Input.GetAxis ("P1_Vertical");

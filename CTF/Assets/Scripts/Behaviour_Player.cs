@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 using System.Threading;
+using UnityEngine.SceneManagement;
 
 public class Behaviour_Player : MonoBehaviour {
 
     public float acceleration;                //Floating point variable to store the player's movement speed.
 	public float maxSpeed;
 	public bool quit; 
-    
+    bool isFlagged;
+
     private Rigidbody2D rb2d;        //Store a reference to the Rigidbody2D component required to use 2D Physics.
 	private Animator anim;
     Transform t;
@@ -17,6 +19,7 @@ public class Behaviour_Player : MonoBehaviour {
     float moveVertical;
     Thread thread;
     Vector2 velocity;
+
     // Use this for initialization
     void Start()
     {
@@ -25,14 +28,12 @@ public class Behaviour_Player : MonoBehaviour {
 	   anim = GetComponent<Animator> ();
        velocity = new Vector2(0, 0);
        quit = false;
+       isFlagged = false;
        thread = new Thread(Run);
        thread.Start();
     }
 
     void Run() {
-        
-      //Debug.Log("mil");
-    
        while(true) {
             //Use the two store floats to create a new Vector2 variable movement.
             Vector2 movement = new Vector2 (moveHorizontal, moveVertical);
@@ -76,13 +77,21 @@ public class Behaviour_Player : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collider) {
         if(collider.gameObject.tag == "Flag") {
             anim.SetBool("isFlagged", true);
+            isFlagged = true;
+        }
+        if(collider.gameObject.tag == "Victory_Green" && isFlagged == true)
+        {
+            SceneManager.LoadScene("YOU WIN", LoadSceneMode.Additive);
+        }
+        
+        if(collider.gameObject.tag == "Player_2" && isFlagged == true)
+        {
+            anim.SetBool("isFlagged", false);
+            isFlagged = false;
         }
     }
     
 	void Upadate() {
-		// anim.SetFloat("Speed", 1);
-		// anim.SetBool("isFlagged", false);
-		// anim.SetBool("isFrozen", false);
 	}
 	
 	private float angle;
@@ -101,4 +110,5 @@ public class Behaviour_Player : MonoBehaviour {
     void OnApplicationQuit() {
         thread.Abort();
     }
+    
 }

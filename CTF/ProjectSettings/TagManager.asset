@@ -8,6 +8,8 @@ TagManager:
   - Base
   - Player_1
   - Player_2
+  - Victory_Blue
+  - Victory_Green
   layers:
   - Default
   - TransparentFX

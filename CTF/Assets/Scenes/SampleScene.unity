@@ -2213,10 +2213,9 @@ GameObject:
   - component: {fileID: 1246775117}
   - component: {fileID: 1246775116}
   - component: {fileID: 1246775115}
-  - component: {fileID: 1246775118}
   m_Layer: 0
   m_Name: victory_box_green
-  m_TagString: Untagged
+  m_TagString: Victory_Green
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2336,18 +2335,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1246775118
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1246775113}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4460dfd981f347be8198ddfab1d82e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1325386588
 GameObject:
   m_ObjectHideFlags: 0
@@ -3132,10 +3119,9 @@ GameObject:
   - component: {fileID: 1912408820}
   - component: {fileID: 1912408822}
   - component: {fileID: 1912408821}
-  - component: {fileID: 1912408823}
   m_Layer: 0
   m_Name: victory_box_blue
-  m_TagString: Untagged
+  m_TagString: Victory_Blue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3206,18 +3192,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.693491, y: 0.8216746}
   m_EdgeRadius: 0
---- !u!114 &1912408823
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1912408819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d4460dfd981f347be8198ddfab1d82e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1929011664
 GameObject:
   m_ObjectHideFlags: 0

@@ -16,7 +16,11 @@ public class WIN : MonoBehaviour
     {
         
     }
+    
     void OnTriggerEnter2D(Collider2D collider) {
-    	SceneManager.LoadScene("YOU WIN", LoadSceneMode.Additive);
-    }
+    	if(collider.gameObject.tag == "Player_1")
+        {
+            SceneManager.LoadScene("YOU WIN", LoadSceneMode.Additive);
+        }
+}
 }
